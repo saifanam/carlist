@@ -1,0 +1,75 @@
+@import './../../guide';
+
+.ContentWrap {
+    display: flex;
+    position: relative;
+
+    .Hamburger {
+        position: fixed;
+        left: 0.4em;
+        top: 1.2em;
+        cursor: pointer;
+        display: none;
+
+        @media screen and (max-width: $maxMobile) {
+            display: block;
+        }
+    }
+
+    .FilterWrap {
+        position: fixed;
+        background-color: $white;
+        width: 350px;
+        height: calc(100vh - 3em);
+        box-shadow: $boxShadow;
+        padding: 0.7em 2em;
+        border-radius: 10px;
+
+        .CloseTrigger {
+            position: absolute;
+            top: 1.7em;
+            right: 2em;
+            display: none;
+            cursor: pointer;
+
+            @media screen and (max-width: $maxMobile) {
+                display: block;
+            }
+        }
+
+        @media screen and (max-width: $maxMobile) {
+            display: none;
+            top: 0;
+            width: 100%;
+            left: 0;
+            height: 100%;
+            overflow-y: auto;
+
+            &.Active {
+                display: block;
+            }
+        }
+
+        .FilterRow {
+            display: flex;
+
+            @media screen and (max-width: $maxMobile) {
+                flex-direction: column;
+            }
+        }
+
+        .Subhead {
+            font-family: sans-serif;
+        }
+    }
+
+    .ListWrap {
+        width: calc(100% - 350px - 2em);
+        margin-left: calc(350px + 2em);
+
+        @media screen and (max-width: $maxMobile) {
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+}

@@ -1,0 +1,71 @@
+@import './../../guide';
+.CarItem {
+    box-shadow: $boxShadow;
+    padding: 1em;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    margin: 0.7em 0 2em;
+
+    &.Selected {
+        border: 2px solid $primary;
+    }
+
+    @media screen and (max-width: $maxMobile) {
+        flex-direction: column;
+    }
+
+    h2 {
+        margin: 0;
+    }
+
+    p {
+        margin: 0;
+        font-family: sans-serif;
+    }
+
+    .CarPhoto {
+        width: 150px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1em;
+
+        @media screen and (max-width: $maxMobile) {
+            margin-right: 0;
+        }
+    
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
+    .CarPrice {
+        margin-top: 0.5em;
+    }
+
+    .Unavailable {
+        color: $error;
+        font-size: 0.8em;
+    }
+
+    .ItemCTA {
+        background-color: $primary;
+        width: 200px;
+        color: $white;
+        text-align: center;
+        padding: 0.5em;
+        border-radius: 5px;
+        margin-top: 0.5em;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        cursor: pointer;
+
+        &.Inactive {
+            background-color: $grey01;
+            pointer-events: none;
+        }
+    }
+}
